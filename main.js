@@ -1,6 +1,9 @@
 function sketchProc(P) {
 	//Set up stuff
 	P.size(window.innerWidth,window.innerHeight);
+	$(window).on("resize",function(){
+		P.size(window.innerWidth,window.innerHeight);
+	});
 	P.stroke(70,40,0);
 	var now =new Date();
 	var oldS=-1;
@@ -47,7 +50,8 @@ function sketchProc(P) {
 		if(oldS!=now.getSeconds()){
 			oldS=now.getSeconds();
 			P.background(255,255,255);
-			drawBranch(P.width/2,P.height,P.width/2,P.height/2+P.random(-P.height/8,P.height/8),4,15,80,now.getHours());
+			var slider=1-$(".trunk_slider").val();
+			drawBranch(P.width/2,P.height,P.width/2,slider*P.height,4,15,80,now.getHours());
 			P.fill(0,0,0);
 			P.textSize(70);
 			P.text(now.getHours() + ":" + now.getMinutes(),P.width/2,50);

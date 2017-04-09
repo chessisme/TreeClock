@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html>
 	<body>
-		<canvas id="canvas1" width="500" height="500"></canvas>
-		<script src="processing.js">
-		</script>
-		<script src="main.js">
-		</script>
-		
+		<style>
+			.trunk_slider{
+				position:absolute;
+				top:10px;
+			}
+		</style>
+		<canvas id="canvas1"></canvas>
+		<script src="processing.js"></script>
+		<script src="jquery-3.2.0.min.js"></script>
+		<script src="main.js"></script>
+		<input type="range" min="0" max="1" step="0.01" class="trunk_slider"/>
 	</body>
 </html>
